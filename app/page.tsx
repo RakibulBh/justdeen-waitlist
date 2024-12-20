@@ -3,7 +3,6 @@ import FeatureSuggestionForm from "@/components/FeatureSuggestionForm";
 import FeatureTable from "@/components/FeatureTable";
 import Navbar from "@/components/Navbar";
 import Waitlist from "@/components/Waitlist";
-import Image from "next/image";
 
 export default function Home() {
   return (
@@ -29,9 +28,9 @@ export default function Home() {
             .
           </h1>
           <p className="text-gray-400 text-sm sm:text-md md:text-lg max-w-2xl mx-auto">
-            Wouldn't you love a place to see your daily prayer times but also be
-            able to ask and answer islamic related questions from your brothers
-            and sisters?
+            Wouldn&apos;t you love a place to see your daily prayer times but
+            also be able to ask and answer islamic related questions from your
+            brothers and sisters?
           </p>
         </div>
         <Waitlist />
