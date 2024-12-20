@@ -1,6 +1,5 @@
 "use client";
 import { FormEvent, useState } from "react";
-import Button from "./Button";
 import { addWaitlistEntry } from "@/app/actions";
 import toast from "react-hot-toast";
 import * as EmailValidator from "email-validator";

@@ -6,7 +6,7 @@ const DATABASE_URL = process.env.DATABASE_URL!;
 export async function getWaitlistCount() {
   const sql = neon(DATABASE_URL!);
 
-  const rawData: Record<string, any>[] = await sql`
+  const rawData = await sql`
     SELECT COUNT(*) AS count FROM waitlist;
   `;
 

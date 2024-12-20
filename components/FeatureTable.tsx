@@ -1,6 +1,6 @@
 import { tableData } from "@/Constants";
 import { CircleCheck, CircleX } from "lucide-react";
-import React, { ReactNode } from "react";
+import React from "react";
 
 const TableData = ({ children }: { children: string | boolean }) => {
   return (
