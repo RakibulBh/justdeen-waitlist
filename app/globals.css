@@ -15,3 +15,7 @@ tr:nth-last-child() {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+
+html {
+  scroll-behavior: smooth;
+}

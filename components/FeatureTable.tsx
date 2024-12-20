@@ -30,7 +30,7 @@ const TableRow = ({ children }: { children: React.ReactNode }) => {
 
 const FeatureTable = () => {
   return (
-    <div className="overflow-hidden rounded-lg border border-gray-200 shadow-md">
+    <div className="overflow-hidden rounded-lg border border-gray-200 shadow-md z-99">
       <table className="w-full table-auto text-sm text-left">
         <thead className="bg-gray-100 text-gray-700">
           <tr>
@@ -46,8 +46,8 @@ const FeatureTable = () => {
           </tr>
         </thead>
         <tbody>
-          {tableData.map((row) => (
-            <TableRow>
+          {tableData.map((row, index) => (
+            <TableRow key={index}>
               <TableData>{row.feature}</TableData>
               <TableData>{row.myDeen}</TableData>
               <TableData>{row.other}</TableData>

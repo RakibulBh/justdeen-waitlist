@@ -1,4 +1,7 @@
-export const navLinks = ["Product", "Features", "Testimonial", "Pricing"];
+export const navLinks = [
+  { name: "Features", link: "#features" },
+  { name: "Contribute an idea", link: "#contribute" },
+];
 
 export const tableData = [
   {
