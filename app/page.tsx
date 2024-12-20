@@ -1,3 +1,4 @@
+import FeatureTable from "@/components/FeatureTable";
 import Navbar from "@/components/Navbar";
 import Waitlist from "@/components/Waitlist";
 import Image from "next/image";
@@ -30,6 +31,16 @@ export default function Home() {
           </p>
         </div>
         <Waitlist />
+      </section>
+      <section className="h-screen bg-white px-64 flex flex-col justify-center py-12 space-y-12">
+        <h1 className="text-center text-6xl font-bold">
+          Why{" "}
+          <strong className="text-transparent bg-clip-text bg-gradient-to-br from-[#e54ed0] to-[#ffe4f2]">
+            MyDeen
+          </strong>{" "}
+          and not other apps?
+        </h1>
+        <FeatureTable />
       </section>
     </main>
   );

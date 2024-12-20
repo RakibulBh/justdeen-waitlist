@@ -1,6 +1,6 @@
 "use client";
 import React, { FormEvent, useState } from "react";
-import Button from "./button";
+import Button from "./Button";
 
 const Waitlist = () => {
   const [email, setUserEmail] = useState("");
@@ -20,9 +20,7 @@ const Waitlist = () => {
             placeholder="Your email address"
             className="border border-gray-500 w-96 p-4 rounded-lg focus:outline-none  "
           />
-          <button className="px-8 py-3 rounded-lg bg-gradient-to-r from-[#9f45b0] to-[#e54ed0] text-white">
-            Join the waitlist
-          </button>
+          <Button>Join the waitlist</Button>
         </div>
       </form>
       <p className="text-gray-400">

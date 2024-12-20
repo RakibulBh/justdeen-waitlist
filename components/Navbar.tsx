@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "./Logo";
 import Navlink from "./Navlink";
 import { navLinks } from "@/Constants";
-import Button from "./button";
+import Button from "./Button";
 
 const Navbar = () => {
   return (
