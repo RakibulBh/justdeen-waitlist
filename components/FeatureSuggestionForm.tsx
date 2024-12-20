@@ -1,23 +1,36 @@
 "use client";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import Button from "./Button";
+import { addWaitlistEntry } from "@/app/actions";
+import toast from "react-hot-toast";
+import * as EmailValidator from "email-validator";
 
 const FeatureSuggestionForm = () => {
   const [email, setEmail] = useState<string>("");
   const [feature, setFeature] = useState<string>("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     if (!email) {
-      alert("Email is required!");
+      toast.error("Server: email cannot be empty");
       return;
     }
-    console.log("Form submitted:", { email, feature });
+
+    const isValidEmail = EmailValidator.validate(email);
+
+    if (!isValidEmail) {
+      toast.error("Server: email is not valid");
+      return;
+    }
+
+    addWaitlistEntry({ email, feature: feature ? feature : "" });
+    toast.success("Successfully added to the waitlist!");
   };
 
   return (
     <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-md border border-pink-100/50 p-8">
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form onSubmit={onSubmit} className="space-y-6">
         <div className="space-y-2">
           <label
             htmlFor="email"

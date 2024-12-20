@@ -28,7 +28,9 @@ const Navbar = () => {
 
             {/* Desktop CTA Button */}
             <div className="hidden md:block">
-              <Button>Join Waitlist</Button>
+              <Link href="#contribute">
+                <Button>Join Waitlist</Button>
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}

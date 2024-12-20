@@ -1,12 +1,22 @@
 "use client";
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useEffect, useState } from "react";
 import * as EmailValidator from "email-validator";
 import Button from "./Button";
-import { addWaitlistEntry } from "@/app/actions";
+import { addWaitlistEntry, getWaitlistCount } from "@/app/actions";
 import toast from "react-hot-toast";
 
 const Waitlist = () => {
   const [email, setUserEmail] = useState("");
+  const [waitlistCount, setWaitlistCount] = useState<number>();
+
+  // Fetch amount of peopel signed up
+  useEffect(() => {
+    const fetchCount = async () => {
+      const count = await getWaitlistCount();
+      setWaitlistCount(count);
+    };
+    fetchCount();
+  }, []);
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -41,7 +51,7 @@ const Waitlist = () => {
         </div>
       </form>
       <p className="text-gray-400">
-        Join 22 others waiting for this amazing app to be out!
+        Join {waitlistCount} others waiting for this amazing app to be out!
       </p>
     </div>
   );

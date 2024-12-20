@@ -1,13 +1,20 @@
+"use server";
 import { neon } from "@neondatabase/serverless";
 
-const DATABASE_URL = process.env.NEXT_PUBLIC_DATABASE_URL!;
+const DATABASE_URL = process.env.DATABASE_URL!;
 
 export async function getWaitlistCount() {
   const sql = neon(DATABASE_URL!);
-  const data = await sql`
-    SELECT COUNT(*) FROM waitlist;
+
+  const rawData: Record<string, any>[] = await sql`
+    SELECT COUNT(*) AS count FROM waitlist;
   `;
-  return data;
+
+  if (rawData.length > 0) {
+    return rawData[0]?.count;
+  }
+
+  return 0;
 }
 
 export async function addWaitlistEntry({
@@ -19,11 +26,14 @@ export async function addWaitlistEntry({
 }) {
   const sql = neon(DATABASE_URL!);
 
-  const data = await `${
-    feature
-      ? sql`INSERT INTO waitlist (email, feature) VALUES (${email}, ${feature})`
-      : sql`INSERT INTO waitlist (email) VALUES (${email})`
-  };`;
+  let data;
+
+  if (feature) {
+    data =
+      await sql`INSERT INTO waitlist (email, feature_request) VALUES (${email}, ${feature})`;
+  } else {
+    data = await sql`INSERT INTO waitlist (email) VALUES (${email})`;
+  }
 
   return data;
 }
