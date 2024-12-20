@@ -1,13 +1,30 @@
 "use client";
 import React, { FormEvent, useState } from "react";
+import * as EmailValidator from "email-validator";
 import Button from "./Button";
+import { addWaitlistEntry } from "@/app/actions";
+import toast from "react-hot-toast";
 
 const Waitlist = () => {
   const [email, setUserEmail] = useState("");
 
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(email);
+
+    if (!email) {
+      toast.error("Server: email cannot be empty");
+      return;
+    }
+
+    const isValidEmail = EmailValidator.validate(email);
+
+    if (!isValidEmail) {
+      toast.error("Server: email is not valid");
+      return;
+    }
+
+    addWaitlistEntry({ email });
+    toast.success("Successfully added to the waitlist!");
   };
 
   return (
