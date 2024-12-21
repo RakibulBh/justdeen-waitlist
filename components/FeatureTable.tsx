@@ -38,7 +38,7 @@ const FeatureTable = () => {
               Feature
             </th>
             <th className="px-6 py-4 text-center text-sm font-semibold">
-              MyDeen
+              JustDeen
             </th>
             <th className="px-6 py-4 text-center text-sm font-semibold">
               Other Apps
@@ -49,7 +49,7 @@ const FeatureTable = () => {
           {tableData.map((row, index) => (
             <TableRow key={index}>
               <TableData>{row.feature}</TableData>
-              <TableData>{row.myDeen}</TableData>
+              <TableData>{row.justDeen}</TableData>
               <TableData>{row.other}</TableData>
             </TableRow>
           ))}

@@ -17,7 +17,7 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Logo>MYDEEN</Logo>
+            <Logo>JUSTDEEN</Logo>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">

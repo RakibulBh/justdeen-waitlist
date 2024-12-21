@@ -6,27 +6,27 @@ export const navLinks = [
 export const tableData = [
   {
     feature: "Beautiful and Easy Interface",
-    myDeen: true,
+    justDeen: true,
     other: false,
   },
   {
     feature: "Does not sell Data",
-    myDeen: true,
+    justDeen: true,
     other: false,
   },
   {
     feature: "Does not have Ads",
-    myDeen: true,
+    justDeen: true,
     other: false,
   },
   {
     feature: "Listens to the users",
-    myDeen: true,
+    justDeen: true,
     other: false,
   },
   {
     feature: "Q&A Section",
-    myDeen: true,
+    justDeen: true,
     other: false,
   },
 ];

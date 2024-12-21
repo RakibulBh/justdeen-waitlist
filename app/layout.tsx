@@ -11,7 +11,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "MyDeen Waitlist",
+  title: "JustDeen Waitlist",
   description: "Join the waitlist for the the best islamic app!",
 };
 
