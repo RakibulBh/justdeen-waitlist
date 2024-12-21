@@ -44,14 +44,15 @@ const Waitlist = () => {
           <input
             value={email}
             onChange={(e) => setUserEmail(e.target.value)}
-            placeholder="Your email address"
-            className="border border-gray-500 w-96 p-4 rounded-lg focus:outline-none  "
+            placeholder="Email"
+            className="border border-[#9f45b0] w-64 md:w-96 px-4 py-1 sm:p-4 rounded-lg focus:outline-none  "
           />
           <Button>Join the waitlist</Button>
         </div>
       </form>
       <p className="text-gray-400">
-        Join {waitlistCount} others waiting for this amazing app to be out!
+        Join {waitlistCount && waitlistCount > 5 ? waitlistCount : ""} others
+        waiting for this amazing app to be out!
       </p>
     </div>
   );

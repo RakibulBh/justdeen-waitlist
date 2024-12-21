@@ -20,7 +20,7 @@ export const tableData = [
     other: false,
   },
   {
-    feature: "Not Owned by Israel",
+    feature: "Listens to the users",
     myDeen: true,
     other: false,
   },

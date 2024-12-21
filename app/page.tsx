@@ -12,7 +12,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="min-h-screen bg-white flex flex-col justify-center items-center px-4 sm:px-6 md:px-12 lg:px-24 xl:px-64 space-y-8 py-20">
         <div className="space-y-6 text-center max-w-6xl">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
             The perfect app for your needs.{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#44008b] to-[#9f45b0]">
               Full transparency
@@ -27,10 +27,9 @@ export default function Home() {
             </span>
             .
           </h1>
-          <p className="text-gray-400 text-sm sm:text-md md:text-lg max-w-2xl mx-auto">
-            Wouldn&apos;t you love a place to see your daily prayer times but
-            also be able to ask and answer islamic related questions from your
-            brothers and sisters?
+          <p className="text-gray-400 text-xs sm:text-md md:text-lg max-w-2xl mx-auto">
+            The islamic app where <strong>YOUR</strong> voice makes a
+            difference.
           </p>
         </div>
         <Waitlist />
@@ -44,9 +43,9 @@ export default function Home() {
         <div className="absolute inset-0 overflow-hidden">
           <div className="w-full sm:w-[700px] md:w-[900px] lg:w-[1100px] aspect-square rounded-full blur-3xl opacity-10 bg-gradient-to-r from-[#e54ed0] to-[#ffe4f2] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10" />
         </div>
-        <h1 className="text-center text-2xl sm:text-3xl md:text-4xl font-bold">
+        <h1 className="text-center text-xl sm:text-3xl md:text-4xl font-bold">
           Why{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#e54ed0] to-[#ffe4f2] border-b-4 rounded-sm border-[#e54ed0]">
+          <span className="font-semibold text-[#e54ed0] underline underline-offset-4">
             MyDeen
           </span>{" "}
           and not other apps?
