@@ -1,9 +1,8 @@
 "use server";
 import { neon } from "@neondatabase/serverless";
 
-const DATABASE_URL = process.env.DATABASE_URL!;
-
 export async function getWaitlistCount() {
+  const DATABASE_URL = process.env.DATABASE_URL!;
   const sql = neon(DATABASE_URL!);
 
   const rawData = await sql`
@@ -24,6 +23,7 @@ export async function addWaitlistEntry({
   email: string;
   feature?: string;
 }) {
+  const DATABASE_URL = process.env.DATABASE_URL!;
   const sql = neon(DATABASE_URL!);
 
   let data;
