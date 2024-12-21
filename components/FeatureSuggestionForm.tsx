@@ -7,12 +7,17 @@ import * as EmailValidator from "email-validator";
 const FeatureSuggestionForm = () => {
   const [email, setEmail] = useState<string>("");
   const [feature, setFeature] = useState<string>("");
+  const [pending, isPending] = useState(false);
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    isPending(true);
+
     e.preventDefault();
 
     if (!email) {
       toast.error("Server: email cannot be empty");
+      isPending(false);
+
       return;
     }
 
@@ -20,10 +25,15 @@ const FeatureSuggestionForm = () => {
 
     if (!isValidEmail) {
       toast.error("Server: email is not valid");
+      isPending(false);
+
       return;
     }
 
     addWaitlistEntry({ email, feature: feature ? feature : "" });
+    isPending(false);
+    setEmail("");
+    setFeature("");
     toast.success("Successfully added to the waitlist!");
   };
 
@@ -66,10 +76,11 @@ const FeatureSuggestionForm = () => {
         </div>
 
         <button
+          disabled={pending}
           type="submit"
           className="w-full py-3 px-6 rounded-lg bg-gradient-to-r from-[#44008b] via-[#9f45b0] to-[#e54ed0] text-white font-medium shadow-lg shadow-pink-500/20 hover:shadow-xl hover:shadow-pink-500/30 transform hover:-translate-y-0.5 transition-all duration-200"
         >
-          Join Waitlist
+          {pending ? "Joining" : "Join waitlist!"}
         </button>
       </form>
     </div>
