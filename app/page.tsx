@@ -46,7 +46,7 @@ export default function Home() {
         <h1 className="text-center text-xl sm:text-3xl md:text-4xl font-bold">
           Why{" "}
           <span className="font-semibold text-[#e54ed0] underline underline-offset-4">
-            MyDeen
+            JustDeen
           </span>{" "}
           and not other apps?
         </h1>
